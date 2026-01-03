@@ -31,14 +31,13 @@ public abstract class RoleDecorator extends Membre {
 
     // Afficher les informations avec le rôle
     public void afficherRoleEtResponsabilites() {
-        System.out.println("│ MEMBRE: " + nom + " " + prenom);
-        System.out.println("├─────────────────────────────────────┤");
-        System.out.println("│ ID: " + id);
-        System.out.println("│ Type: " + getType());
-        System.out.println("│ Rôles: " + String.join(", ", getRoles()));
-        System.out.println("│ Responsabilités:");
+        System.out.println(" MEMBRE: " + nom + " " + prenom);
+        System.out.println(" ID: " + id);
+        System.out.println(" Type: " + getType());
+        System.out.println(" Rôles: " + String.join(", ", getRoles()));
+        System.out.println(" Responsabilités:");
         for (String resp : getResponsabilites()) {
-            System.out.println("│   • " + resp);
+            System.out.println(resp);
         }
     }
 }

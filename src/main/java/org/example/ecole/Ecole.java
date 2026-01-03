@@ -70,6 +70,5 @@ public class Ecole {
         System.out.println("École: " + nom);
         System.out.println("Année: " + anneeScolaire);
         System.out.println("Nombre de clubs: " + listeClubs.size());
-        System.out.println("════════════════════════════════════════╝");
     }
 }

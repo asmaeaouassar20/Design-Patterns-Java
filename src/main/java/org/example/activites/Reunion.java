@@ -1,6 +1,8 @@
 package org.example.activites;
 
 
+import org.example.personnes.Membre;
+
 import java.util.ArrayList;
 import java.util.List;
 

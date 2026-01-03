@@ -1,6 +1,8 @@
 package org.example.strategies;
 
 
+import org.example.clubs.Club;
+
 import java.util.*;
 
 public class PlanningCompetition implements PlanningStrategy {

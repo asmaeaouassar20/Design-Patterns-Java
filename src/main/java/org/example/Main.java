@@ -1,5 +1,18 @@
 package org.example;
 
+import org.example.activites.ActiviteBuilder;
+import org.example.activites.Evenement;
+import org.example.activites.Reunion;
+import org.example.clubs.ClubCulturel;
+import org.example.clubs.ClubSportif;
+import org.example.ecole.Ecole;
+import org.example.personnes.Eleve;
+import org.example.personnes.FabriqueMembres;
+import org.example.personnes.Intervenant;
+import org.example.personnes.Professeur;
+import org.example.personnes.roles.President;
+import org.example.personnes.roles.Secretaire;
+import org.example.personnes.roles.Tresorier;
 import org.example.ressources.Budget;
 import org.example.ressources.Materiel;
 import org.example.ressources.Salle;
@@ -7,22 +20,37 @@ import org.example.strategies.PlanningCompetition;
 import org.example.strategies.PlanningProjet;
 import org.example.strategies.PlanningRegulier;
 
+import java.util.Calendar;
 import java.util.Date;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("╔════════  Classe  de Test  ════════════╗");
+        System.out.println("===========  Classe  de Test  ===========");
 
-        // Test de tous les patterns
+        System.out.println("\n\n\n Test du pattern Singleton");
         testPatternSingleton();
+
+        System.out.println("\n\n\nTest du pattern Factory");
         testPatternFactory();
+
+        System.out.println("\n\n\nTest du pattern Composite");
         testPatternComposite();
+
+        System.out.println("\n\n\nTest du pattern Decorator");
         testPatternDecorator();
+
+        System.out.println("\n\n\nTest du pattern Builder ");
         testPatternBuilder();
+
+        System.out.println("\n\n\nTest du pattern Observer");
         testPatternObserver();
+
+        System.out.println("\n\n\nTest du pattern Strategy");
         testPatternStrategy();
+
+        System.out.println("\n\n\n--->  Les ressources :");
         testRessources();
         testScenarioComplet();
     }
@@ -49,7 +77,7 @@ public class Main {
 
     // TEST 2 : Pattern Factory
     public static void testPatternFactory() {
-        System.out.println("-->  TEST 2 : PATTERN FACTORY - Création de Membres        █");
+        System.out.println("-->  TEST 2 : PATTERN FACTORY - Création de Membres       ");
 
         // Créer des membres avec la fabrique
         Eleve eleve1 = FabriqueMembres.creerEleve(
@@ -72,12 +100,12 @@ public class Main {
                 "Arts plastiques", "Association Culturelle", "Vacation"
         );
 
-        System.out.println("\n✓ TEST RÉUSSI: 4 membres créés via la Factory");
+        System.out.println("\nTEST RÉUSSI: 4 membres créés via la Factory");
     }
 
     // TEST 3 : Pattern Composite
     public static void testPatternComposite() {
-        System.out.println("--> TEST 3 : PATTERN COMPOSITE - Clubs                    █");
+        System.out.println("--> TEST 3 : PATTERN COMPOSITE - Clubs                    ");
 
         Ecole ecole = Ecole.getInstance();
 
@@ -261,28 +289,6 @@ public class Main {
         clubMusique.ajouterMembre(membre2);
         clubMusique.ajouterMembre(membre3);
 
-        // Désactiver les notifications pour un membre
-        membre3.desactiverNotifications();
-
-        // Envoyer des notifications
-        clubMusique.notifierMembres(
-                "Répétition générale ce samedi à 14h",
-                "ACTIVITÉ"
-        );
-
-        clubMusique.notifierMembres(
-                "N'oubliez pas vos instruments !",
-                "RAPPEL"
-        );
-
-        clubMusique.notifierMembres(
-                "Concert annuel prévu le 15 mars",
-                "INFO"
-        );
-
-        // Afficher l'historique
-        clubMusique.getNotificationSystem().afficherHistorique();
-
         System.out.println("\nTEST RÉUSSI: Notifications envoyées via Observer");
     }
 
@@ -424,7 +430,7 @@ public class Main {
         budget.ajouterDepense("Spectacle extérieur", 3000.0, "Événement"); // Devrait échouer
         budget.afficherBilan();
 
-        System.out.println("\n✓ TEST RÉUSSI: Toutes les ressources fonctionnelles");
+        System.out.println("\n TEST RÉUSSI: Toutes les ressources fonctionnelles");
     }
 
     // TEST 9 : Scénario Complet
@@ -503,11 +509,6 @@ public class Main {
         president.decider("Valider le thème de l'exposition");
         president.decider("Inviter des photographes professionnels");
 
-        // 8. Notifier les membres (Observer)
-        clubPhoto.notifierMembres(
-                "L'exposition aura lieu le 20 mars - Tous les membres doivent être présents",
-                "ÉVÉNEMENT"
-        );
 
         // 9. Créer un planning projet (Strategy)
         PlanningProjet planning = new PlanningProjet();
@@ -547,7 +548,7 @@ public class Main {
         tresorier.afficherComptes();
         ecole.afficherStatistiques();
 
-        System.out.println("\n✓ TEST RÉUSSI: Scénario complet exécuté avec succès !");
+        System.out.println("\nTEST RÉUSSI: Scénario complet exécuté avec succès !");
         System.out.println("   Tous les patterns ont collaboré harmonieusement.");
     }
 

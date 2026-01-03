@@ -1,6 +1,8 @@
 package org.example.activites;
 
 
+import org.example.personnes.Membre;
+import org.example.personnes.Professeur;
 import org.example.ressources.Materiel;
 import org.example.ressources.Salle;
 

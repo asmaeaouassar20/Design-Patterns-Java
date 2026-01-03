@@ -18,14 +18,14 @@ public class NotificationSystem {
     public void attacher(Observateur observateur) {
         if (!observateurs.contains(observateur)) {
             observateurs.add(observateur);
-            System.out.println("✓ Observateur ajouté: " + observateur.getIdentifiant());
+            System.out.println(" Observateur ajouté: " + observateur.getIdentifiant());
         }
     }
 
     // Détacher un observateur
     public void detacher(Observateur observateur) {
         if (observateurs.remove(observateur)) {
-            System.out.println("✗ Observateur retiré: " + observateur.getIdentifiant());
+            System.out.println(" Observateur retiré: " + observateur.getIdentifiant());
         }
     }
 

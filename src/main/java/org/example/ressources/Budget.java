@@ -77,7 +77,7 @@ public class Budget {
 
         System.out.println("DÉPENSES (" + depenses.size() + "):");
         for (Transaction d : depenses) {
-            System.out.println("d.montant + "€ - " + d.description);
+            System.out.println(d.montant + "€ - " + d.description);
         }
     }
 

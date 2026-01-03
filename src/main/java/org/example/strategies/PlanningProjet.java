@@ -1,6 +1,8 @@
 package org.example.strategies;
 
 
+import org.example.clubs.Club;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -47,10 +49,9 @@ public class PlanningProjet implements PlanningStrategy {
     @Override
     public void genererPlanning(Club club) {
         System.out.println("\nPLANNING PROJET - " + club.getNom());
-        System.out.println("════════════════════════════════════════");
         System.out.println("Type: Planning par étapes avec jalons");
 
-        System.out.println("\n🔹 ÉTAPES DU PROJET:");
+        System.out.println("\n ÉTAPES DU PROJET:");
         for (int i = 0; i < etapes.size(); i++) {
             Etape etape = etapes.get(i);
             String statut = etape.completee ? "ok" : "pas encore";
@@ -59,7 +60,7 @@ public class PlanningProjet implements PlanningStrategy {
             System.out.println("     Du " + etape.dateDebut + " au " + etape.dateFin);
         }
 
-        System.out.println("\n🎯 JALONS IMPORTANTS:");
+        System.out.println("\n JALONS IMPORTANTS:");
         for (Jalon jalon : jalons) {
             String statut = jalon.atteint ? "ok" : "en cours";
             System.out.println("  " + statut + " " + jalon.nom + " - " + jalon.date);
