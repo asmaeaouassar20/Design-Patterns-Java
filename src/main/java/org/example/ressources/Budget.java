@@ -36,7 +36,7 @@ public class Budget {
         this.solde = montantInitial;
         this.depenses = new ArrayList<>();
         this.recettes = new ArrayList<>();
-        System.out.println("💰 Budget initialisé: " + montantInitial + "€");
+        System.out.println("Budget initialisé: " + montantInitial + "€");
     }
 
     public boolean ajouterDepense(String description, double montant, String categorie) {
@@ -59,7 +59,7 @@ public class Budget {
         Transaction recette = new Transaction(description, montant, categorie);
         recettes.add(recette);
         solde += montant;
-        System.out.println("💵 Recette enregistrée: " + montant + "€ - " + description);
+        System.out.println("Recette enregistrée: " + montant + "€ - " + description);
         System.out.println("   Nouveau solde: " + solde + "€");
     }
 
@@ -77,7 +77,7 @@ public class Budget {
 
         System.out.println("DÉPENSES (" + depenses.size() + "):");
         for (Transaction d : depenses) {
-            System.out.println("d.montant + "€ - " + d.description);
+            System.out.println(d.montant + "€ - " + d.description);
         }
     }
 

@@ -26,11 +26,12 @@ public class President extends RoleDecorator {
     }
 
     public void gerer() {
-        System.out.println( nom + " " + prenom + " gère les affaires du club");
+        System.out.println("--- Gestion du club --- ");
+        System.out.println("--> "+ nom + " " + prenom + " gère les affaires du club");
     }
 
     public void decider(String decision) {
-        System.out.println("  Décision prise par le président: " + decision);
+        System.out.println("-->  Décision prise par le président: " + decision);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package org.example.strategies;
 
 
+import org.example.clubs.Club;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +52,6 @@ public class PlanningRegulier implements PlanningStrategy {
     // Ajouter un créneau supplémentaire
     public void ajouterCreneauSupplementaire(String description) {
         creneauxHebdomadaires.add(description);
-        System.out.println("Créneau supplémentaire ajouté: " + description);
+        System.out.println("> Créneau supplémentaire ajouté: " + description);
     }
 }

@@ -21,9 +21,10 @@ public class ClubSportif extends Club {
 
     @Override
     public void organiserActivite() {
-        System.out.println("Organisation d'une séance de " + sport +
+        System.out.println("--- Organiser Activité ---");
+        System.out.println("-> Organisation d'une séance de " + sport +
                 " (niveau: " + niveau + ")");
-        System.out.println("   Équipements nécessaires: " + equipements);
+        System.out.println("-> Équipements nécessaires: " + equipements);
     }
 
     @Override

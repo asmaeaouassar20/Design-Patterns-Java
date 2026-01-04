@@ -27,7 +27,7 @@ public class Materiel {
             System.out.println("  Date de retour prévue: " + dateRetour);
             return true;
         } else {
-            System.out.println("✗ Matériel " + id + " non disponible");
+            System.out.println("Matériel " + id + " non disponible");
             System.out.println("  Emprunté par: " + empruntePar);
             System.out.println("  Retour prévu: " + dateRetour);
             return false;
@@ -54,8 +54,8 @@ public class Materiel {
         System.out.println("État: " + etat);
         System.out.println("Disponible: " + (disponible ? "Oui" : "Non"));
         if (!disponible) {
-            System.out.println("│ Emprunté par: " + empruntePar);
-            System.out.println("│ Retour prévu: " + dateRetour);
+            System.out.println(". Emprunté par: " + empruntePar);
+            System.out.println(". Retour prévu: " + dateRetour);
         }
     }
 

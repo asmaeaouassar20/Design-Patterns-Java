@@ -30,7 +30,7 @@ public class Reunion extends Activite {
 
     public void ajouterDecision(String decision) {
         decisions.add(decision);
-        System.out.println("✓ Décision ajoutée: " + decision);
+        System.out.println("Décision ajoutée: " + decision);
     }
 
     // Getters et Setters

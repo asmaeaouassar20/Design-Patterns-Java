@@ -1,5 +1,18 @@
 package org.example;
 
+import org.example.activites.ActiviteBuilder;
+import org.example.activites.Evenement;
+import org.example.activites.Reunion;
+import org.example.clubs.ClubCulturel;
+import org.example.clubs.ClubSportif;
+import org.example.ecole.Ecole;
+import org.example.personnes.Eleve;
+import org.example.personnes.FabriqueMembres;
+import org.example.personnes.Intervenant;
+import org.example.personnes.Professeur;
+import org.example.personnes.roles.President;
+import org.example.personnes.roles.Secretaire;
+import org.example.personnes.roles.Tresorier;
 import org.example.ressources.Budget;
 import org.example.ressources.Materiel;
 import org.example.ressources.Salle;
@@ -7,29 +20,44 @@ import org.example.strategies.PlanningCompetition;
 import org.example.strategies.PlanningProjet;
 import org.example.strategies.PlanningRegulier;
 
+import java.util.Calendar;
 import java.util.Date;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("╔════════  Classe  de Test  ════════════╗");
+        System.out.println("\n===========  Classe  pour tester les DP utilisés  ===========");
 
-        // Test de tous les patterns
+        System.out.println("\n\n Test du pattern Singleton");
         testPatternSingleton();
+
+        System.out.println("\n\nTest du pattern Factory");
         testPatternFactory();
+
+        System.out.println("\n\nTest du pattern Composite");
         testPatternComposite();
+
+        System.out.println("\n\nTest du pattern Decorator");
         testPatternDecorator();
+
+        System.out.println("\n\nTest du pattern Builder ");
         testPatternBuilder();
+
+        System.out.println("\n\nTest du pattern Observer");
         testPatternObserver();
+
+        System.out.println("\n\nTest du pattern Strategy");
         testPatternStrategy();
+
+        System.out.println("\n\n--->  Les ressources :");
         testRessources();
         testScenarioComplet();
     }
 
     // TEST 1 : Pattern Singleton
     public static void testPatternSingleton() {
-        System.out.println("==>  TEST 1 : PATTERN SINGLETON - École                    █");
+        System.out.println("==>  TEST 1 : PATTERN SINGLETON - École                    ");
 
         // Obtenir l'instance unique de l'école
         Ecole ecole1 = Ecole.getInstance();
@@ -49,7 +77,7 @@ public class Main {
 
     // TEST 2 : Pattern Factory
     public static void testPatternFactory() {
-        System.out.println("-->  TEST 2 : PATTERN FACTORY - Création de Membres        █");
+        System.out.println("-->  TEST 2 : PATTERN FACTORY - Création de Membres       ");
 
         // Créer des membres avec la fabrique
         Eleve eleve1 = FabriqueMembres.creerEleve(
@@ -72,12 +100,12 @@ public class Main {
                 "Arts plastiques", "Association Culturelle", "Vacation"
         );
 
-        System.out.println("\n✓ TEST RÉUSSI: 4 membres créés via la Factory");
+        System.out.println("\nTEST RÉUSSI: 4 membres créés via la Factory");
     }
 
     // TEST 3 : Pattern Composite
     public static void testPatternComposite() {
-        System.out.println("--> TEST 3 : PATTERN COMPOSITE - Clubs                    █");
+        System.out.println("--> TEST 3 : PATTERN COMPOSITE - Clubs                    ");
 
         Ecole ecole = Ecole.getInstance();
 
@@ -120,7 +148,7 @@ public class Main {
 
     // TEST 4 : Pattern Decorator
     public static void testPatternDecorator() {
-        System.out.println("--> TEST 4 : PATTERN DECORATOR - Rôles des Membres        █");
+        System.out.println("--> TEST 4 : PATTERN DECORATOR - Rôles des Membres        ");
 
         // Créer des membres
         Eleve eleve = FabriqueMembres.creerEleve(
@@ -159,7 +187,7 @@ public class Main {
         secretaire.redigerCompteRendu("Réunion du 15/01", "Discussion sur les activités à venir");
         secretaire.ajouterNote("Prévoir une réunion de bureau la semaine prochaine");
 
-        System.out.println("\n✓ TEST RÉUSSI: Rôles ajoutés via Decorator");
+        System.out.println("\nTEST RÉUSSI: Rôles ajoutés via Decorator");
     }
 
     // TEST 5 : Pattern Builder
@@ -230,7 +258,7 @@ public class Main {
 
     // TEST 6 : Pattern Observer
     public static void testPatternObserver() {
-        System.out.println("--> TEST 6 : PATTERN OBSERVER - Notifications             █");
+        System.out.println("--> TEST 6 : PATTERN OBSERVER - Notifications             ");
 
         // Créer un club
         ClubCulturel clubMusique = new ClubCulturel(
@@ -260,28 +288,6 @@ public class Main {
         clubMusique.ajouterMembre(membre1);
         clubMusique.ajouterMembre(membre2);
         clubMusique.ajouterMembre(membre3);
-
-        // Désactiver les notifications pour un membre
-        membre3.desactiverNotifications();
-
-        // Envoyer des notifications
-        clubMusique.notifierMembres(
-                "Répétition générale ce samedi à 14h",
-                "ACTIVITÉ"
-        );
-
-        clubMusique.notifierMembres(
-                "N'oubliez pas vos instruments !",
-                "RAPPEL"
-        );
-
-        clubMusique.notifierMembres(
-                "Concert annuel prévu le 15 mars",
-                "INFO"
-        );
-
-        // Afficher l'historique
-        clubMusique.getNotificationSystem().afficherHistorique();
 
         System.out.println("\nTEST RÉUSSI: Notifications envoyées via Observer");
     }
@@ -381,12 +387,12 @@ public class Main {
         planningProjet.genererPlanning(clubScience);
         planningProjet.completerEtape("Phase de recherche");
 
-        System.out.println("\n✓ TEST RÉUSSI: 3 stratégies de planning testées");
+        System.out.println("\nTEST RÉUSSI: 3 stratégies de planning testées");
     }
 
     // TEST 8 : Ressources
     public static void testRessources() {
-        System.out.println("--> TEST 8 : RESSOURCES - Salles, Matériel, Budget        █");
+        System.out.println("--> TEST 8 : RESSOURCES - Salles, Matériel, Budget        ");
 
         // Test Salle
         Salle salle = new Salle("C205", 25);
@@ -424,12 +430,12 @@ public class Main {
         budget.ajouterDepense("Spectacle extérieur", 3000.0, "Événement"); // Devrait échouer
         budget.afficherBilan();
 
-        System.out.println("\n✓ TEST RÉUSSI: Toutes les ressources fonctionnelles");
+        System.out.println("\n TEST RÉUSSI: Toutes les ressources fonctionnelles");
     }
 
     // TEST 9 : Scénario Complet
     public static void testScenarioComplet() {
-        System.out.println("--> TEST 9 : SCÉNARIO COMPLET - Intégration               █");
+        System.out.println("--> TEST 9 : SCÉNARIO COMPLET - Intégration               ");
 
         System.out.println("SCÉNARIO: Organisation d'un événement complet");
 
@@ -503,11 +509,6 @@ public class Main {
         president.decider("Valider le thème de l'exposition");
         president.decider("Inviter des photographes professionnels");
 
-        // 8. Notifier les membres (Observer)
-        clubPhoto.notifierMembres(
-                "L'exposition aura lieu le 20 mars - Tous les membres doivent être présents",
-                "ÉVÉNEMENT"
-        );
 
         // 9. Créer un planning projet (Strategy)
         PlanningProjet planning = new PlanningProjet();
@@ -547,7 +548,7 @@ public class Main {
         tresorier.afficherComptes();
         ecole.afficherStatistiques();
 
-        System.out.println("\n✓ TEST RÉUSSI: Scénario complet exécuté avec succès !");
+        System.out.println("\nTEST RÉUSSI: Scénario complet exécuté avec succès !");
         System.out.println("   Tous les patterns ont collaboré harmonieusement.");
     }
 

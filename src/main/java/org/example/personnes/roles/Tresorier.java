@@ -31,18 +31,20 @@ public class Tresorier extends RoleDecorator {
     }
 
     public void gererBudget(double montant, String description) {
+        System.out.println("--- Gestion du budget --- ");
         double solde = budget.get("solde");
         solde += montant;
         budget.put("solde", solde);
 
         String operation = montant > 0 ? "Recette" : "Dépense";
-        System.out.println(operation + ": " + Math.abs(montant) + "€ - " + description);
-        System.out.println("   Nouveau solde: " + solde + "€");
+        System.out.println("--> "+operation + ": " + Math.abs(montant) + "€ - " + description);
+        System.out.println("-->   Nouveau solde: " + solde + "€");
     }
 
     public void afficherComptes() {
+        System.out.println("--- Affichage des comptes ---");
         System.out.println("\n ÉTAT DES COMPTES");
-        System.out.println("   Solde actuel: " + budget.get("solde") + "€");
+        System.out.println("   Solde actuel: " + budget.get("solde") + "€\n");
     }
 
     @Override

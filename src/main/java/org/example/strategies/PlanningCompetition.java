@@ -1,6 +1,8 @@
 package org.example.strategies;
 
 
+import org.example.clubs.Club;
+
 import java.util.*;
 
 public class PlanningCompetition implements PlanningStrategy {
@@ -31,6 +33,7 @@ public class PlanningCompetition implements PlanningStrategy {
 
     @Override
     public void genererPlanning(Club club) {
+        System.out.println("--- Génération du planning  --- ");
         System.out.println("\nPLANNING COMPÉTITION - " + club.getNom());
         System.out.println("Type: Planning par phases avec dates fixes");
         System.out.println("\nPhases programmées:");
@@ -67,7 +70,7 @@ public class PlanningCompetition implements PlanningStrategy {
     public void ajouterPhase(String nom, String periode) {
         Phase phase = new Phase(nom, periode);
         phases.add(phase);
-        System.out.println("Phase ajoutée: " + nom + " (" + periode + ")");
+        System.out.println(">> Phase ajoutée: " + nom + " (" + periode + ")");
     }
 
     // Ajouter un objectif à une phase
@@ -75,7 +78,7 @@ public class PlanningCompetition implements PlanningStrategy {
         for (Phase phase : phases) {
             if (phase.nom.equals(nomPhase)) {
                 phase.ajouterObjectif(objectif);
-                System.out.println("Objectif ajouté à la phase " + nomPhase);
+                System.out.println(">> Objectif ajouté à la phase " + nomPhase);
                 return;
             }
         }
@@ -84,6 +87,6 @@ public class PlanningCompetition implements PlanningStrategy {
     // Fixer une date importante
     public void fixerDate(String evenement, Date date) {
         datesFixees.put(evenement, date);
-        System.out.println("Date fixée: " + evenement + " le " + date);
+        System.out.println(">> Date fixée: " + evenement + " le " + date);
     }
 }

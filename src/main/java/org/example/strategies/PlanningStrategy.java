@@ -1,6 +1,8 @@
 package org.example.strategies;
 
 
+import org.example.clubs.Club;
+
 import java.util.List;
 
 public interface PlanningStrategy {

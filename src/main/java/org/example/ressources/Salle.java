@@ -35,9 +35,10 @@ public class Salle {
     }
 
     public void ajouterEquipement(String equipement) {
+        System.out.println("--- Ajput d'un équipement ---");
         if (!equipements.contains(equipement)) {
             equipements.add(equipement);
-            System.out.println("Équipement ajouté à la salle " + numero + ": " + equipement);
+            System.out.println("Équipement ajouté à la salle " + numero + ": " + equipement+"\n");
         }
     }
 

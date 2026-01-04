@@ -18,6 +18,7 @@ public class ActiviteBuilder {
 
     // Méthodes statiques pour créer le builder
     public static ActiviteBuilder creerReunion() {
+        System.out.println("--- Création d'une réunion ---");
         return new ActiviteBuilder(new Reunion());
     }
 
@@ -88,7 +89,7 @@ public class ActiviteBuilder {
 
     // Construire l'activité finale
     public Activite build() {
-        System.out.println("✓ Activité construite: " + activite.getNom());
+        System.out.println("Activité construite: " + activite.getNom());
         return activite;
     }
 }

@@ -36,6 +36,7 @@ public class Ecole {
 
     // Créer un club
     public void ajouterClub(Club club) {
+        System.out.println("--- Ajout d'un club --- ");
         if (club != null && !listeClubs.contains(club)) {
             listeClubs.add(club);
             System.out.println("Club '" + club.getNom() + "' ajouté à l'école");
@@ -66,10 +67,9 @@ public class Ecole {
 
     // Afficher les statistiques
     public void afficherStatistiques() {
-        System.out.println("STATISTIQUES DE L'ÉCOLE ");
+        System.out.println("> Informations sur l'école : ");
         System.out.println("École: " + nom);
         System.out.println("Année: " + anneeScolaire);
         System.out.println("Nombre de clubs: " + listeClubs.size());
-        System.out.println("════════════════════════════════════════╝");
     }
 }

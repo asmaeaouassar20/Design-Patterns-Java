@@ -31,6 +31,7 @@ public class Secretaire extends RoleDecorator {
     }
 
     public void redigerCompteRendu(String titre, String contenu) {
+        System.out.println("--- Rédaction du compte rendu ---");
         String cr = "[" + new java.util.Date() + "] " + titre + ": " + contenu;
         comptesRendus.add(cr);
         System.out.println("Compte-rendu rédigé: " + titre);
@@ -38,7 +39,7 @@ public class Secretaire extends RoleDecorator {
 
     public void ajouterNote(String note) {
         notes.add(note);
-        System.out.println("Note ajoutée: " + note);
+        System.out.println("--> Note ajoutée: " + note);
     }
 
     public void afficherComptes() {

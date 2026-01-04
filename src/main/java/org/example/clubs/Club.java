@@ -44,11 +44,12 @@ public abstract class Club {
 
     // Afficher les informations du club
     public void afficherInfos() {
-        System.out.println("CLUB: " + nom);
-        System.out.println(" Description: " + description);
-        System.out.println(" Responsable: " + (responsable != null ?
+        System.out.println("--- afficher des infos ---");
+        System.out.println("- CLUB: " + nom);
+        System.out.println("- Description: " + description);
+        System.out.println("- Responsable: " + (responsable != null ?
                 responsable.getNom() + " " + responsable.getPrenom() : "Non assigné"));
-        System.out.println(" Effectif: " + getEffectif() + " membres");
+        System.out.println("- Effectif: " + getEffectif() + " membres");
     }
 
     // Getters et Setters

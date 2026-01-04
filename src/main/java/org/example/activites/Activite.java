@@ -28,6 +28,7 @@ public abstract class Activite {
 
     // Afficher les détails
     public void afficherDetails() {
+        System.out.println("--- Affichage des détails ---");
         System.out.println("ACTIVITÉ: " + nom);
         System.out.println("- Date: " + date);
         System.out.println("- Lieu: " + (lieu != null ? lieu.getNumero() : "Non défini"));
