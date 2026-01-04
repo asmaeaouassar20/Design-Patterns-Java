@@ -1,6 +1,8 @@
 package org.example.activites;
 
 
+import org.example.personnes.Membre;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +19,8 @@ public class Reunion extends Activite {
     @Override
     public void executer() {
         System.out.println("\nDÉBUT DE LA RÉUNION: " + nom);
-        System.out.println("Ordre du jour: " + ordreDuJour);
-        System.out.println("Participants: " + participants.size() + " personnes");
+        System.out.println("- Ordre du jour: " + ordreDuJour);
+        System.out.println("- Participants: " + participants.size() + " personnes");
 
         for (Membre m : participants) {
             System.out.println("  • " + m.getNom() + " " + m.getPrenom() +

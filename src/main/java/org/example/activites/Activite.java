@@ -1,6 +1,8 @@
 package org.example.activites;
 
 
+import org.example.personnes.Membre;
+import org.example.personnes.Professeur;
 import org.example.ressources.Materiel;
 import org.example.ressources.Salle;
 
@@ -27,13 +29,12 @@ public abstract class Activite {
     // Afficher les détails
     public void afficherDetails() {
         System.out.println("ACTIVITÉ: " + nom);
-        System.out.println("Date: " + date);
-        System.out.println("Lieu: " + (lieu != null ? lieu.getNumero() : "Non défini"));
-        System.out.println("│Responsable: " + (responsable != null ?
+        System.out.println("- Date: " + date);
+        System.out.println("- Lieu: " + (lieu != null ? lieu.getNumero() : "Non défini"));
+        System.out.println("- Responsable: " + (responsable != null ?
                 responsable.getNom() + " " + responsable.getPrenom() : "Non assigné"));
-        System.out.println("│ Participants: " + participants.size());
-        System.out.println("│ Matériel requis: " + materiel.size() + " items");
-        System.out.println("└─────────────────────────────────────┘");
+        System.out.println("- Participants: " + participants.size());
+        System.out.println("- Matériel requis: " + materiel.size() + " items");
     }
 
     // Getters et Setters
